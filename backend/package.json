@@ -16,8 +16,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "vite build"
+    "start": "node index.js"
+    
   },
   "dependencies": {
     "aws-sdk": "^2.1692.0",
