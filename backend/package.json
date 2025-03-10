@@ -29,5 +29,8 @@
     "mongoose": "^8.10.1",
     "nodemailer": "^6.10.0",
     "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "vite": "^6.2.1"
   }
 }
