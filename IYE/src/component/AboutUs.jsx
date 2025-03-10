@@ -174,6 +174,7 @@ const AboutUs = () => {
                                 />
                                 <div className="p-4 text-center">
                                     <h3 className="text-xl font-bold">Lakshman Kumar Sah</h3>
+                                    <p>MCA-Masters's of Computer Application <br />BITS MESRA</p>
                                     <p className="text-gray-600 dark:text-gray-300">Co-Founder & CTO</p>
                                     <div className="flex justify-center mt-4 space-x-4">
                                         <a href="#" className="text-red-600 hover:text-red-800">
@@ -196,7 +197,9 @@ const AboutUs = () => {
                                 />
                                 <div className="p-4 text-center">
                                     <h3 className="text-xl font-bold">Shubham Anand</h3>
+                                    <p>MCA-Masters's of Computer Application <br />BITS MESRA</p>
                                     <p className="text-gray-600 dark:text-gray-300">Co-Founder & CEO</p>
+                                    
                                     <div className="flex justify-center mt-4 space-x-4">
                                         <a href="#" className="text-red-600 hover:text-red-800">
                                             <i className="fab fa-facebook-f"></i>
@@ -218,6 +221,7 @@ const AboutUs = () => {
                                 />
                                 <div className="p-4 text-center">
                                     <h3 className="text-xl font-bold">Surendra Saurav</h3>
+                                    
                                     <p className="text-gray-600 dark:text-gray-300">Co-Founder & CMO</p>
                                     <div className="flex justify-center mt-4 space-x-4">
                                         <a href="#" className="text-red-600 hover:text-red-800">

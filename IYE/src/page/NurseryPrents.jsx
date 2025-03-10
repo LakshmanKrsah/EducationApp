@@ -49,7 +49,7 @@ const testimonials = [
       },
       {
         "id": 7,
-        "name": "Aajay Kumar",
+        "name": "Ajay Kumar",
         "role": "Parent",
         "message": "No more screen addiction! The interactive teaching methods keep my child engaged with real-world activities instead of mobile screens!",
         "image": "./public/NurseryParents/parents1.jpg"

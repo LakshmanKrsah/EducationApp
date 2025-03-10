@@ -13,17 +13,18 @@ const EarlyEducation = () => {
         <div className="text-center">
           <h1 className="text-3xl font-bold">💡 Because Early Education Shapes the Future!</h1>
           <p className="mt-2 text-lg">
-            At Illuminate Your Education (IYE), we nurture, engage, and develop essential life skills in your child.
+            At Illuminate Your Education (IYE), we nurture, engage, and develop essential life skills in your child. <br />
+            <span>Our structured program is carefully designed by child psychologists and educators</span>
           </p>
         </div>
 
-        {/* Video Section */}
+        {/* Video Section
         <div className="flex justify-center">
           <video className="w-3/4 rounded-lg shadow-lg" controls>
             <source src="/videos/nursery_lkg_ukg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div> */}
 
         {/* Graphical Representation
         <div className="flex justify-center">

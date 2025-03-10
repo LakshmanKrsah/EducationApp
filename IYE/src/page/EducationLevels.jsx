@@ -6,14 +6,14 @@ const EducationLevels = () => {
 
   const sections = [
     {
-      title: "Grade Nursery & KG",
+      title: "Grade Nursery & KG (CBSE & ICSE)",
       description: "Fun and interactive learning experiences to build strong foundational skills.",
       bgColor: "bg-yellow-100",
       borderColor: "border-yellow-500",
       path: "/early-education", // Correctly defined path
     },
     {
-      title: "Grade 1st to 3rd ",
+      title: "Grade 1st to 3rd (CBSE & ICSE)",
       description: "Engaging curriculum to develop critical thinking and creativity.",
       bgColor: "bg-blue-100",
       borderColor: "border-blue-500",
