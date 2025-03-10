@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Payment = () => {
-  const upiId = "7717707814@ptsbi"; // Replace with actual UPI ID
+  const upiId = "7766870970@axl"; // Replace with actual UPI ID
   const whatsappNumber = "+91 7766870970"; // Replace with actual WhatsApp number
   const qrCodeUrl =
     "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +

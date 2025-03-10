@@ -8,6 +8,7 @@ const UpdateSection = () => {
   const [loading, setLoading] = useState(true);
   const [showQuizzes, setShowQuizzes] = useState(false);
   const [showExamMaterials, setShowExamMaterials] = useState(false);
+  const [showSkills, setShowSkills] = useState(false); // New state for skill section
 
   useEffect(() => {
     const fetchUpdates = async () => {
@@ -75,20 +76,39 @@ const UpdateSection = () => {
           )}
         </div>
 
-        {/* Enroll in Skill Classes Section */}
+        {/* Enroll in Skill Classes Section with Hide/Show Button */}
         <div className="bg-white shadow-lg p-5 rounded-lg border mb-6">
           <h3 className="text-2xl font-semibold text-gray-700 flex items-center">
             📌 {updates.skillsTitle || "Enroll in Skill Classes"}
           </h3>
           <p className="text-gray-600 mt-2">{updates.skillsDescription}</p>
-          <a
-            href={updates.skillsLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-green-500 text-white px-4 py-2 rounded-md text-center mt-3 hover:bg-green-600"
+
+          <button
+            onClick={() => setShowSkills(!showSkills)}
+            className="block bg-green-500 text-white px-4 py-2 rounded-md text-center mt-3 hover:bg-green-600 w-full"
           >
-            Enroll Now
-          </a>
+            {showSkills ? "Hide Skill Classes" : "View Skill Classes"}
+          </button>
+
+          {showSkills && (
+            <div className="mt-3">
+              {updates.skills && updates.skills.length > 0 ? (
+                updates.skills.map((skill, index) => (
+                  <a
+                    key={index}
+                    href={skill.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-green-200 text-gray-800 px-4 py-2 rounded-md text-center mt-2 hover:bg-green-300"
+                  >
+                    {skill.title} - {skill.description}
+                  </a>
+                ))
+              ) : (
+                <p className="text-gray-500">No skill courses available.</p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Exam Tips & Strategies with Expandable Study Materials */}
