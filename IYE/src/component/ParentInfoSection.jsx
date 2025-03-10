@@ -97,7 +97,7 @@ export default function ParentInfoSection() {
 
       <div className="mt-8">
         <a
-          href="https://wa.me/message/2KRZEEKQKG2ID1"
+          href="https://wa.me/917766870970?text=%22Hello%20%20IYE!%20%F0%9F%8E%89%0A%F0%9F%93%A9%20For%20more%20info%2C%20visit%3A%20www.iye.org.in%20%F0%9F%8C%8D%0A%20IYE%20revolutionizing%20personalized%20home%20tuition%20with%3A%0A%E2%9C%85%20Two-Teacher%20Module%20%E2%80%93%20Learn%20from%20two%20expert%20teachers.%0A%E2%9C%85%20Doubt%20Assistance%20%E2%80%93%20Get%20instant%20support%20anytime.%0A%E2%9C%85%20Ombudsman%20Support%20%E2%80%93%20Because%20grades%20shine%20when%20the%20mind%20is%20fine!"
           className="bg-blue-500 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-600 transition"
         >
           Join IYE Today 🚀
