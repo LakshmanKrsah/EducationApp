@@ -4,6 +4,8 @@ import Login from './Login';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 function Signup() {
     const {
@@ -68,6 +70,7 @@ function Signup() {
 
     return (
         <>
+            <Navbar />
             <Toaster position="top-center" reverseOrder={false} />  {/* Toast Notification */}
             <div className='flex h-screen items-center justify-center bg-white dark:bg-slate-900 dark:text-white'>
                 <div className="w-[600px]">
@@ -145,6 +148,7 @@ function Signup() {
                     {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
             </div>
+            <Footer />
         </>
     );
 }

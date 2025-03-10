@@ -7,6 +7,8 @@ import SocialMediaLinks from "./SocialMediaLinks";
 function Footer() {
   return (
     <div>
+      {/* Social Media Icons */}
+      <SocialMediaLinks />
       <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 space-y-6 mt-10 dark:bg-slate-900 dark:text-white">
 
         {/* Quick Links and Legal Section */}
@@ -47,8 +49,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Social Media Icons */}
-        <SocialMediaLinks />
+        
 
         {/* Footer Copyright */}
         <aside>
