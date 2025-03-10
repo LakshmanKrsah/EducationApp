@@ -1,7 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login';
+import { useAuth } from '../context/AuthProvider';
+import Logout from './Logout';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const [authUser, setAuthUser] = useAuth();
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+  console.log(authUser);
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+    console.log("Searching for:", searchQuery);
+    navigate(`/search?q=${searchQuery}`); // Navigate to search results page
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
   useEffect(() => {
@@ -35,19 +55,21 @@ const Navbar = () => {
 
   const navItems = (
     <>
-      <li><a href="/">Home</a></li>
-      <li><a href="/course">Course</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/course">Course</Link></li>
+      <li><Link to="/teachers">Teachers</Link></li>
+      <li><Link to="/payment">Payment</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/contact">Contact Us</Link></li>
+      <li><Link to={"/update"}>Student Learning Zone </Link></li>
     </>
   );
 
   return (
-    <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-      sticky
-      ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out" 
+    <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${sticky
+      ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out"
       : " "
-    }`}>
+      }`}>
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -67,11 +89,26 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow  dark:bg-slate-900 dark:text-white">
               {navItems}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">IYE</a>
+          <img
+            src="/Logo.jpg"
+            alt="IYE Logo"
+            className="h-10 w-auto sm:h-12 md:h-14 rounded-full cursor-pointer transition-all duration-300"
+            onClick={() => navigate(-1)} // Navigate back on click
+          />
+
+          <a href='/' className="btn btn-ghost text-xl text-blue-500 font-[Pacifico] text-center sm:whitespace-pre-line sm:block">
+            <span className="sm:hidden">
+              Revolutionize<br />Home tuition
+            </span>
+            <span className="hidden sm:inline">
+              Revolutionize Home Tuition
+            </span>
+          </a>
+
         </div>
         <div className="navbar-end space-x-3">
           <div className="navbar-center hidden lg:flex">
@@ -79,21 +116,33 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <div className='hidden md:block'>
+          {/* <div className="hidden md:block">
             <label className="px-3 py-2 border rounded-md flex items-center gap-2">
-              <input type="text" className="grow outline-none dark:bg-slate-900 dark:text-white" placeholder="Search" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="h-4 w-4 opacity-70">
-                <path
-                  fillRule="evenodd"
-                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                  clipRule="evenodd" />
-              </svg>
+              <input
+                type="text"
+                className="grow outline-none dark:bg-slate-900 dark:text-white"
+                placeholder="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown} // Press Enter to search
+              />
+              <button onClick={handleSearch}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="h-4 w-4 opacity-70"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
             </label>
-          </div>
+          </div> */}
+
           <label className="swap swap-rotate">
             <input type="checkbox" className="theme-controller" checked={theme === "dark"} onChange={() => setTheme(theme === "light" ? "dark" : "light")} />
             <svg
@@ -111,13 +160,29 @@ const Navbar = () => {
                 d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Z" />
             </svg>
           </label>
-          <div>
+          {/* <div>
             <a className="bg-black text-white p-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
             onClick={()=>document.getElementById("my_modal_3").showModal()}
             >
               Login</a>
               <Login/>
-          </div>
+          </div> */}
+          {
+            authUser ?
+              (<Logout />
+
+              ) : (
+                <div>
+                  <a
+                    className="bg-black text-white p-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                    onClick={() => document.getElementById("my_modal_3").showModal()}
+                  >
+                    Login
+                  </a>
+                  <Login />
+                </div>
+              )}
+
         </div>
       </div>
     </div>

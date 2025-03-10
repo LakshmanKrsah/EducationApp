@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Signup() {
     const {
@@ -10,10 +12,34 @@ function Signup() {
         formState: { errors },
     } = useForm();
 
+    const navigate = useNavigate();
+
     // Define the onSubmit function
-    const onSubmit = (data) => {
-        console.log(data);
-        // You can add logic for form submission here, e.g., API call for signup
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,
+        }
+
+        await axios.post("http://localhost:4001/user/signup", userInfo)
+            .then((res) => {
+                console.log(res.data)
+                if (res.data) {
+                    toast.success('Signup Successfully');
+                    localStorage.setItem("Users", JSON.stringify(res.data.user));
+
+                    // Redirect to home page after successful signup
+                    setTimeout(() => {
+                        navigate("/");  // Redirect to home page
+                    }, 2000);  // Redirect after 2 seconds
+                }
+            }).catch((err) => {
+                if (err.response) {
+                    console.log(err);
+                    toast.error("Error: " + err.response.data.message);
+                }
+            });
     };
 
     // State to track dark mode
@@ -42,8 +68,9 @@ function Signup() {
 
     return (
         <>
+            <Toaster position="top-center" reverseOrder={false} />  {/* Toast Notification */}
             <div className='flex h-screen items-center justify-center bg-white dark:bg-slate-900 dark:text-white'>
-                <div id="" className="w-[600px]">
+                <div className="w-[600px]">
                     <div className="modal-box dark:bg-slate-800 dark:text-white">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             {/* Close Button */}
@@ -58,9 +85,11 @@ function Signup() {
                                     type="text" 
                                     placeholder='Enter your FullName' 
                                     className='w-80 px-3 py-1 border rounded-md outline-none dark:bg-slate-700 dark:border-slate-600 dark:text-white' 
-                                    {...register("Name", { required: "Name is required" })}
+                                    {...register("fullname",
+                                        { required: "Name is required" })}
                                 />
-                                {errors.Name && <span className='text-red-500'>{errors.Name.message}</span>}
+                                <br />
+                                {errors.fullname && <span className='text-red-500'>{errors.fullname.message}</span>}
                             </div>
                             {/* Email */}
                             <div className='mt-4 space-y-2'>
@@ -72,6 +101,7 @@ function Signup() {
                                     className='w-80 px-3 py-1 border rounded-md outline-none dark:bg-slate-700 dark:border-slate-600 dark:text-white' 
                                     {...register("email", { required: "Email is required" })}
                                 />
+                                <br />
                                 {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
                             </div>
                             {/* Password */}
@@ -84,12 +114,13 @@ function Signup() {
                                     className='w-80 px-3 py-1 border rounded-md outline-none dark:bg-slate-700 dark:border-slate-600 dark:text-white' 
                                     {...register("password", { required: "Password is required" })}
                                 />
+                                <br />
                                 {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
                             </div>
                             {/* Button */}
                             <div className='flex justify-around mt-4'>
                                 <button 
-                                    type="submit" 
+                                    type="submit"  // Changed to button for form submission
                                     className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200'>
                                     Signup
                                 </button>
