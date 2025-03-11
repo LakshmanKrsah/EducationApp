@@ -29,7 +29,7 @@ export function EnquiryForm() {
     }
 
     try {
-      const response = await fetch("http://localhost:4001/api/enquiry", {
+      const response = await fetch("https://iye.onrender.com/api/enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
