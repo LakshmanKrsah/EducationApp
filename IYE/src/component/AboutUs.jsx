@@ -168,7 +168,7 @@ const AboutUs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                                 <img
-                                    src="./public/images/lakshman.png"
+                                    src="./images/lakshman.png"
                                     alt="Lakshman Kumar Sah"
                                     className="w-full h-80 object-cover"
                                 />
@@ -191,7 +191,7 @@ const AboutUs = () => {
                             </div>
                             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                                 <img
-                                    src="./public/images/shubham.jpg"
+                                    src="./images/shubham.jpg"
                                     alt="Shubham Anand"
                                     className="w-full h-80 object-cover"
                                 />
@@ -215,7 +215,7 @@ const AboutUs = () => {
                             </div>
                             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                                 <img
-                                    src="./public/images/saurav.jpg"
+                                    src="./images/saurav.jpg"
                                     alt="Surendra Saurav"
                                     className="w-full h-80 object-cover"
                                 />
