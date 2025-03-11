@@ -192,7 +192,7 @@ const AboutUs = () => {
                             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                                 <img
                                     src="./public/images/shubham.jpg"
-                                    alt="Ella Grace"
+                                    alt="Shubham Anand"
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="p-4 text-center">
@@ -216,7 +216,7 @@ const AboutUs = () => {
                             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                                 <img
                                     src="./public/images/saurav.jpg"
-                                    alt="Kylian Herrera"
+                                    alt="Surendra Saurav"
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="p-4 text-center">

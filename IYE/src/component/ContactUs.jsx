@@ -128,7 +128,7 @@ const ContactUs = () => {
               </div>
               <h3 className="text-xl font-bold">OUR OFFICE LOCATION</h3>
               <p>Illuminate Your Education</p>
-              <p>H.No. 096, Near P.T Middle School, Tilkamanjhi, Bhagalpur, Bihar, (812001)</p>
+              <p>Near P.T Middle School, Tilkamanjhi, Bhagalpur, Bihar, (812001)</p>
             </div>
           </div>
         </div>
