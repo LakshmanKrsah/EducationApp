@@ -2,7 +2,7 @@ import React from "react";
 import { FaYoutube, FaLinkedin, FaTwitter, FaTelegramPlane, FaExternalLinkAlt, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const socialLinks = [
-  { name: "YouTube", icon: <FaYoutube />, url: "#", color: "text-red-500", bg: "bg-red-100" },
+  { name: "YouTube", icon: <FaYoutube />, url: "https://youtube.com/@iyeilluminateyoureducation?si=ug2pDOw15oXqevip", color: "text-red-500", bg: "bg-red-100" },
   { name: "Facebook", icon: <FaFacebook />, url: "https://www.facebook.com/profile.php?id=61573935812227&mibextid=ZbWKwL", color: "text-blue-600", bg: "bg-blue-100" },
   { name: "Twitter", icon: <FaTwitter />, url: " https://x.com/Illuminate87081?t=4CkH2lXYqLr5OOtHmH4oaA&s=08 ", color: "text-sky-500", bg: "bg-sky-100" },
   { name: "Instagram", icon: <FaInstagram />, url: "https://www.instagram.com/illuminate_your_education?igsh=MmR1aDlra2RyejV4", color: "text-blue-400", bg: "bg-blue-100" }
