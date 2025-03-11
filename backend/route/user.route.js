@@ -3,26 +3,49 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-import User from "../model/user.model.js"; // Import your User model
+import User from "../model/user.model.js"; // Ensure the correct User model path
 import { login } from "../controller/user.controller.js";
 
 dotenv.config(); // Load environment variables
 
 const router = express.Router();
 
-router.post("/login", login);  // ✅ This must match your frontend request
+router.post("/login", login);  // ✅ Login route
 
+// ✅ ADD SIGNUP ROUTE
+router.post("/signup", async (req, res) => {
+    try {
+        const { fullname, email, password } = req.body;
 
-// ✅ Setup Nodemailer Transporter (SMTP)
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    },
+        // Check if the user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "User already exists" });
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create a new user
+        const newUser = new User({
+            fullname,
+            email,
+            password: hashedPassword,
+        });
+
+        await newUser.save();
+
+        // Create JWT token
+        const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+
+        res.status(201).json({ message: "Signup successful", user: newUser, token });
+    } catch (error) {
+        console.error("❌ Signup Error:", error);
+        res.status(500).json({ message: "Server error" });
+    }
 });
 
-// 🔹 Forgot Password Route (Send Reset Link)
+// ✅ Forgot Password Route (Send Reset Link)
 router.post("/forgot-password", async (req, res) => {
     try {
         const { email } = req.body;
@@ -44,6 +67,15 @@ router.post("/forgot-password", async (req, res) => {
         await user.save();
 
         const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${resetToken}`;
+
+        // 🔹 Setup Nodemailer Transporter (SMTP)
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+        });
 
         // 🔹 Email Content
         const mailOptions = {
