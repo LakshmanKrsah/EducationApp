@@ -12,7 +12,7 @@ function ForgotPassword({ onClose }) {
 
     try {
       console.log("📤 Sending request to backend...");
-      const response = await fetch("http://localhost:4001/user/forgot-password", { 
+      const response = await fetch("https://iye.onrender.com/user/forgot-password", { 
         method: "POST",
         body: JSON.stringify({ email }),
         headers: { "Content-Type": "application/json" },

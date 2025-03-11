@@ -13,7 +13,7 @@ function CourseDetail() {
             try {
                 console.log(`Fetching course with ID: ${id}`); // Debugging
 
-                const res = await axios.get(`http://localhost:4001/course/${id}`);
+                const res = await axios.get(`https://iye.onrender.com/course/${id}`);
                 console.log("API Response:", res.data); // Debugging
 
                 if (res.data) {

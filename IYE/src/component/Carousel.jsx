@@ -11,7 +11,7 @@ const Carousel = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await axios.get("http://localhost:4001/carousel");
+        const response = await axios.get("https://iye.onrender.com/carousel");
         setCards(response.data);
       } catch (err) {
         console.error("Error fetching cards:", err);

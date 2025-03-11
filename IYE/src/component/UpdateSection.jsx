@@ -13,7 +13,7 @@ const UpdateSection = () => {
   useEffect(() => {
     const fetchUpdates = async () => {
       try {
-        const response = await axios.get("http://localhost:4001/api/update");
+        const response = await axios.get("https://iye.onrender.com/api/update");
         console.log("Fetched Data:", response.data);
         setUpdates(response.data);
         setLoading(false);
