@@ -51,7 +51,7 @@ const Teachers = () => {
     setSuccess(null); // Clear previous success message
   
     try {
-      const response = await fetch("https://iye.onrender.com/api/teachers", {
+      const response = await fetch("http://localhost:4001/api/teachers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

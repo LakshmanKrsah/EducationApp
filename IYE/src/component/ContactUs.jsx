@@ -17,7 +17,7 @@ const ContactUs = () => {
       setSuccess('');
     } else {
       try {
-        const response = await fetch('https://iye.onrender.com/api/contact', {
+        const response = await fetch('http://localhost:4001/api/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

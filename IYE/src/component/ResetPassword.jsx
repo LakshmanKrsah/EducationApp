@@ -31,7 +31,7 @@ const ResetPassword = () => {
         setMessage("");
 
         try {
-            const response = await fetch("https://iye.onrender.com/user/reset-password", { 
+            const response = await fetch("http://localhost:4001/user/reset-password", { 
                 method: "POST",
                 body: JSON.stringify({ token, newPassword }),
                 headers: { "Content-Type": "application/json" },

@@ -6,15 +6,27 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isReversing, setIsReversing] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Fetch Cards from Backend
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await axios.get("https://iye.onrender.com/carousel");
-        setCards(response.data);
+        const response = await axios.get("http://localhost:4001/carousel");
+        const data = response.data;
+
+        if (Array.isArray(data)) {
+          setCards(data);
+        } else {
+          console.error("Unexpected response format:", data);
+          setError("Failed to load carousel data.");
+        }
       } catch (err) {
         console.error("Error fetching cards:", err);
+        setError("Failed to fetch carousel data.");
+      } finally {
+        setLoading(false);
       }
     };
     fetchCards();
@@ -22,7 +34,7 @@ const Carousel = () => {
 
   // Animation Logic
   useEffect(() => {
-    if (isPaused) return; // Pause animation when hovered
+    if (isPaused || cards.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => {
@@ -40,6 +52,10 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, [isReversing, cards.length, isPaused]);
 
+  if (loading) return <p className="text-center">Loading carousel...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (cards.length === 0) return <p className="text-center">No carousel items found.</p>;
+
   return (
     <div className="relative w-full h-[70vh] overflow-hidden bg-gradient-to-r from-blue-200 to-purple-200 dark:bg-slate-900 dark:text-white">
       {cards.map((card, index) => (
@@ -50,8 +66,8 @@ const Carousel = () => {
         >
           <div
             className="w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-3xl shadow-2xl bg-white p-8 transform transition duration-500 hover:scale-105 relative"
-            onMouseEnter={() => setIsPaused(true)} // Pause when hovered
-            onMouseLeave={() => setIsPaused(false)} // Resume when left
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <div className="flex justify-center mb-4 relative">
               <img
@@ -60,22 +76,12 @@ const Carousel = () => {
                 className="rounded-full w-40 h-40 shadow-lg bg-purple-500 object-cover"
               />
             </div>
-
-            <h2 className="text-3xl font-bold text-center text-blue-800 mb-1">
-              {card.title}
-            </h2>
-            <h3 className="text-2xl text-center text-blue-600 mb-4">
-              {card.subtitle}
-            </h3>
+            <h2 className="text-3xl font-bold text-center text-blue-800 mb-1">{card.title}</h2>
+            <h3 className="text-2xl text-center text-blue-600 mb-4">{card.subtitle}</h3>
             <p className="text-gray-500 text-center mb-4">{card.description}</p>
             <div className="flex justify-center">
               <button className="bg-green-500 text-white rounded-full px-8 py-3 shadow-md hover:bg-green-600 transition duration-300 transform hover:scale-110">
-              <a
-                href="https://wa.me/message/2KRZEEKQKG2ID1"
-                
-              >
-                Contact Us
-              </a>
+                <a href="https://wa.me/message/2KRZEEKQKG2ID1">Contact Us</a>
               </button>
             </div>
           </div>

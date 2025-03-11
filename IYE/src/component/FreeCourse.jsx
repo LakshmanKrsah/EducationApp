@@ -14,7 +14,7 @@ function FreeCourse() {
   useEffect(() => {
     const getCourse = async () => {
       try {
-        const res = await axios.get("https://iye.onrender.com/course");
+        const res = await axios.get("http://localhost:4001/course");
         console.log(res.data);
         setCourse(res.data.filter((data) => data.category === "Free"));
       } catch (error) {
