@@ -8,14 +8,14 @@ const testimonials = [
         "name": "Kuhu Kumari",
         "role": "Student",
         "message": "मम्मा, मेरी टीचर मुझे गिनती खेल-खेल में सिखाती हैं! कभी हम उछलते हैं, कभी तालियाँ बजाते हैं, और मम्मा, मेरी टीचर ने आज मैजिक करवाया! जब मैंने सही रंग पहचाने, तो उन्होंने ताली बजाई और मुझे स्टार स्टिकर मिला! अब मैं और भी जल्दी-जल्दी सीखना चाहता हूँ!",
-        "image": "./public/NurseryParents/ns3.png"
+        "image": "./NurseryParents/ns3.png"
       },
       {
         "id": 2,
         "name": "Samiksha Kumari",
         "role": "Student",
         "message": "My teacher makes me play and learn together! Before, I didn’t like writing, but now we do fun activities with colors and shapes. I made a big round sun with my crayons, and my teacher said it was amazing!",
-        "image": "./public/NurseryParents/ns2.png"
+        "image": "./NurseryParents/ns2.png"
       },
       
       {
@@ -23,14 +23,14 @@ const testimonials = [
         "name": "Bishnu Priya",
         "role": "Teacher",
         "message": "IYE respects teachers! I get to teach only the subjects I love, without any unnecessary workload.",
-        "image": "./public/images/t4.jpg"
+        "image": "./images/t4.jpg"
       },
       {
         "id": 4,
         "name": "Sahil ",
         "role": "Teacher",
         "message": "Instant payments & flexible work! I don’t have to wait till the month-end to get my earnings!",
-        "image": "./public/images/t7.jpg"
+        "image": "./images/t7.jpg"
       },
 
       {
@@ -38,35 +38,35 @@ const testimonials = [
         "name": "Mamta Anand",
         "role": "Parent",
         "message": "I wanted my child to learn in a caring and structured way, and IYE made it possible! Their teachers are warm yet disciplined, ensuring my child learns while having fun!",
-        "image": "./public/NurseryParents/p3.png"
+        "image": "./NurseryParents/p3.png"
       },
       {
         "id": 6,
         "name": "Niraj Mishra",
         "role": "Parent",
         "message": "I love how my child is not just studying but also learning life skills! Activities like storytelling, sensory play, and creative tasks have improved their confidence and curiosity!",
-        "image": "./public/NurseryParents/p4.png"
+        "image": "./NurseryParents/p4.png"
       },
       {
         "id": 7,
         "name": "Ajay Kumar",
         "role": "Parent",
         "message": "No more screen addiction! The interactive teaching methods keep my child engaged with real-world activities instead of mobile screens!",
-        "image": "./public/NurseryParents/parents1.jpg"
+        "image": "./NurseryParents/parents1.jpg"
       },
       {
         "id": 8,
         "name": "Khushboo priya",
         "role": "Parent",
         "message": "The teacher keeps my child active! Instead of just sitting and studying, my child learns through movement, games, and fun activities!",
-        "image": "./public/NurseryParents/parents2.jpg"
+        "image": "./NurseryParents/parents2.jpg"
       },
       {
         "id": 9,
         "name": "Sangeeta Devi",
         "role": "Parent",
         "message": "IYE focuses on overall development, not just alphabets and numbers! From motor skills to social interaction, I can already see the positive changes in my child!",
-        "image": "./public/NurseryParents/parents3.jpg"
+        "image": "./NurseryParents/parents3.jpg"
       }
     ]
   }

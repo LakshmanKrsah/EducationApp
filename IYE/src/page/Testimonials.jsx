@@ -8,28 +8,28 @@ const testimonials = [
         "name": "Abhisek Anand",
         "role": "Student",
         "message": "I love my teachers! They explain everything so well, and I feel much more confident in class now!",
-        "image": "./public/images/s1.png"
+        "image": "./images/s1.png"
       },
       {
         "id": 2,
         "name": "Piyush Kumar",
         "role": "Student",
         "message": "I used to be scared of asking questions, but now I can ask anything without hesitation!",
-        "image": "./public/images/s4.jpg"
+        "image": "./images/s4.jpg"
       },
       {
         "id": 3,
         "name": "Khushi Kumari",
         "role": "Student",
         "message": "Learning at home is so much fun! My teachers make sure I understand everything, and I enjoy my classes!",
-        "image": "./public/images/s2.png"
+        "image": "./images/s2.png"
       },
       {
         "id": 4,
         "name": "Kumari Deepti",
         "role": "Student",
         "message": "The extra skill classes are my favorite! I get to learn beyond textbooks—things like coding, communication, and logical thinking.",
-        "image": "./public/images/s5.jpg"
+        "image": "./images/s5.jpg"
       },
       {
         "id": 5,
@@ -43,77 +43,77 @@ const testimonials = [
         "name": "Raju Anand Vardhan",
         "role": "Parent",
         "message": "Finally, a tuition service that truly cares about my child’s progress! The personalized attention has helped my child improve in ways I never expected!",
-        "image": "./public/images/p1.png"
+        "image": "./images/p1.png"
       },
       {
         "id": 7,
         "name": "Harsh Vardhan Jha",
         "role": "Parent",
         "message": "Affordable & Effective! I was worried about the cost, but IYE offers expert teachers at a reasonable price with real progress!",
-        "image": "./public/images/p2.png"
+        "image": "./images/p2.png"
       },
       {
         "id": 8,
         "name": "Savitri Devi",
         "role": "Parent",
         "message": "The real-time teacher arrival & departure notifications and complaint service make me feel more involved and assured about my child’s learning experience!",
-        "image": "./public/images/Savitri.png"
+        "image": "./images/Savitri.png"
       },
       {
         "id": 9,
         "name": "Devesh Singh",
         "role": "Teacher",
         "message": "IYE respects teachers! I get to teach only the subjects I love, without any unnecessary workload.",
-        "image": "./public/images/t1.jpg"
+        "image": "./images/t1.jpg"
       },
       {
         "id": 10,
         "name": "Ambuz Ankesh",
         "role": "Teacher",
         "message": "Instant payments & flexible work! I don’t have to wait till the month-end to get my earnings!",
-        "image": "./public/images/t2.jpg"
+        "image": "./images/t2.jpg"
       },
       {
         "id": 11,
         "name": "Gautam Mihsra",
         "role": "Teacher",
         "message": "The referral program is amazing! More students = more income! Teaching at IYE is truly rewarding!",
-        "image": "./public/images/t3.jpg"
+        "image": "./images/t3.jpg"
       },
       {
         "id": 12,
         "name": "Shubham Mishra",
         "role": "Teacher",
         "message": "Transparent & Supportive! - IYE management values teachers, gives incentives, and ensures a great work-life balance!",
-        "image": "./public/images/t6.jpg"
+        "image": "./images/t6.jpg"
       },
       {
         "id": 13,
         "name": "Prakesh Kumar",
         "role": "Teacher",
         "message": "Switching between online and offline is easy! Teaching at IYE is smooth, flexible, and stress-free!",
-        "image": "./public/images/t5.jpg"
+        "image": "./images/t5.jpg"
       },
       {
         "id": 14,
         "name": "Soni Devi",
         "role": "Parent",
         "message": "The real-time teacher arrival & departure notifications and complaint service make me feel more involved and assured about my child’s learning experience!",
-        "image": "./public/images/parents3.jpg"
+        "image": "./images/parents3.jpg"
       },
       {
         "id": 15,
         "name": "Bhanumati Rani",
         "role": "Parent",
         "message": "I feel at ease knowing IYE provides substitute teachers whenever needed! My child’s learning never stops, even if the regular teacher is unavailable.",
-        "image": "./public/images/parents2.jpg"
+        "image": "./images/parents2.jpg"
       },
       {
         "id": 16,
         "name": "Jyoti",
         "role": "Parent",
         "message": "Their fortnightly progress updates help me track my child's learning journey. It’s amazing to see real improvements with actual reports!",
-        "image": "./public/images/parents1.jpg"
+        "image": "./images/parents1.jpg"
       },
     ]
   }
